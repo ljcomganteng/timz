@@ -1,0 +1,328 @@
+/* RESET & BASE STYLES */
+:root {
+    --primary-color: #007bff; /* Biru cerah untuk CTA */
+    --secondary-color: #333; /* Warna teks utama */
+    --background-color: #f4f4f9;
+    --card-background: #ffffff;
+    --max-width: 1100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+/* 1. NAVBAR STYLING & ANIMATION (Diubah) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    /* Perubahan untuk membuat "dalam kotak" */
+    background: var(--card-background);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.initials {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Tambahan untuk navigasi responsif */
+.nav-toggle {
+    display: none; /* Sembunyikan tombol toggle secara default (di desktop) */
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+}
+
+.nav-links li a:not(.cta-button) {
+    /* ANIMASI 1: Transisi smooth pada link hover */
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links li a:not(.cta-button):hover {
+    color: var(--primary-color);
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* MAIN SECTIONS LAYOUT */
+.main-section {
+    padding: 80px 5%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* SECTION 1: ABOUT ME */
+.about-me {
+    text-align: center;
+    padding-top: 100px; /* Jarak dari navbar */
+}
+
+.profile-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid var(--primary-color);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* ANIMASI 2: Transisi pada foto */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05); /* Membesar sedikit saat di hover */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); 
+}
+
+.full-name {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.expertise {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.bio-summary {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* SECTION 2: SKILLS */
+.skills {
+    background-color: #e9e9f3;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: var(--card-background);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
+    /* ANIMASI 3: Transisi pada skill card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px); /* Efek 'lift' */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* SECTION 3: PROJECTS (Menggunakan Tabel) */
+.projects {
+    padding-bottom: 100px;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-table th, .project-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    display: table-cell; 
+}
+
+.project-table thead tr {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.project-img-cell {
+    width: 25%;
+    max-width: 200px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.project-img-cell img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #a0c3ff;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* MEDIA QUERIES UNTUK MOBILE FRIENDLY (BARU) */
+@media (max-width: 768px) {
+    /* NAVBAR Responsif */
+    .navbar {
+        padding: 1rem 3%; /* Padding lebih kecil di mobile */
+    }
+    
+    .nav-toggle {
+        display: block; /* Tampilkan tombol burger di mobile */
+    }
+
+    .nav-links {
+        /* Posisikan link secara vertikal dan sembunyikan */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 65px; /* Di bawah navbar */
+        left: 0;
+        background-color: var(--card-background);
+        border-top: 1px solid #eee;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 10px 5%;
+        text-align: center;
+    }
+    
+    .nav-links.active {
+        display: flex; /* Tampilkan menu saat tombol diklik */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
+    /* ABOUT ME Penyesuaian */
+    .full-name {
+        font-size: 2rem;
+    }
+
+    .expertise {
+        font-size: 1rem;
+    }
+    
+    .main-section {
+        padding: 50px 3%;
+    }
+
+    /* PROJECTS Responsif (Tabel menjadi layout tumpuk) */
+    .project-table, .project-table thead, .project-table tbody, .project-table th, .project-table td, .project-table tr {
+        display: block; /* Jadikan elemen tabel sebagai blok untuk menumpuk */
+    }
+    
+    .project-table thead {
+        /* Sembunyikan header tabel di mobile */
+        display: none;
+    }
+    
+    .project-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .project-table td {
+        border: none;
+        position: relative;
+        padding-left: 50%; /* Sisakan ruang untuk label */
+        text-align: right;
+    }
+    
+    /* Ganti Judul Kolom menjadi Label untuk setiap baris */
+    .project-table td::before {
+        content: attr(data-label); 
+        position: absolute;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: var(--primary-color);
+    }
+    
+    /* Sesuaikan tata letak untuk sel foto */
+    .project-img-cell {
+        width: 100%;
+        max-width: none;
+        padding: 10px;
+        text-align: center;
+        background-color: transparent;
+    }
+    
+    .project-img-cell img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
