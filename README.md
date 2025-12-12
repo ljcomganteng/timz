@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional | JS</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <nav class="navbar">
-    <div class="initials">Timz</div> 
-    
-    <button class="nav-toggle" id="navToggle">☰</button> 
-    
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#projects" class="cta-button">Projects</a></li>
-        <li><a href="#about" class="cta-button">About Me</a></li>
-        <li><a href="#contact" class="cta-button">Contact</a></li> 
-    </ul>
-</nav>
-
-    
-    <section id="about" class="main-section about-me">
-        <header class="about-header">
-            <div class="profile-container">
                 <img src="Timz.jpg" alt="Foto Profesional Anda" class="profile-photo"> 
                 </div>
             
